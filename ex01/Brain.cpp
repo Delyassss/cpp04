@@ -19,7 +19,6 @@ Brain::Brain()
 
 Brain::~Brain()
 {
-
     std::cout << "Brain destructor called" << std::endl;
 }
 Brain::Brain(const Brain &other)

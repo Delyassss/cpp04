@@ -56,6 +56,8 @@ Character::Character(const Character &character)
 
 Character &Character::operator=(const Character &character)
 {
+    if (this != &character)
+    {
     this->name = character.name;
     for (int i=0; i < 4; i++)
     {
@@ -75,16 +77,23 @@ Character &Character::operator=(const Character &character)
                 this->amateria[i] = NULL;
             }
         }
+    }
         return (*this);
-  
 }
 
 void Character::equip(AMateria* m)
 {
+    if (m == NULL)
+        return ;
     for (int i = 0; i < 4; i++)
     {
         if (this->amateria[i] == NULL)
         {
+            for (int j = 0; j < 4; j++)
+            {
+                if (this->amateria[j] == m)
+                    return ;
+            }
             this->amateria[i] = m;
             return;
         }

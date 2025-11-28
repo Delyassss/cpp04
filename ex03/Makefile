@@ -1,7 +1,7 @@
-NAME = materia
+NAME = amateria
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRC = AMateria.cpp \
       Ice.cpp \

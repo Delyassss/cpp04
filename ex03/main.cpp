@@ -18,6 +18,10 @@
 
 int main()
 {
+AMateria *floor[50];
+int floor_i = 0;
+for (int i = 0; i < 50; i++)
+    floor[i] = NULL;
 IMateriaSource* src = new MateriaSource();
 src->learnMateria(new Ice());
 src->learnMateria(new Cure());
@@ -30,8 +34,18 @@ me->equip(tmp);
 ICharacter* bob = new Character("bob");
 me->use(0, *bob);
 me->use(1, *bob);
+me->use(2, *bob);
+floor[floor_i++] = tmp;
+me->unequip(1);
+me->unequip(4);
+me->use(3, *bob);
 delete bob;
 delete me;
 delete src;
+for (int i = 0; i < floor_i; i++)
+{
+    if (floor[i])
+    delete floor[i];
+}
 return 0;
 }

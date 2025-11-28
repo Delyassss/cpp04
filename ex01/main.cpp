@@ -59,6 +59,5 @@ int main()
     std::cout << copyDog->getBrain()->getIdea(1) << std::endl;
     delete copyDog;
 
-
     return 0;
 }

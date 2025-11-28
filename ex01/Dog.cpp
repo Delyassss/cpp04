@@ -53,7 +53,8 @@ Dog &Dog::operator=(const Dog& other)
 Dog::~Dog()
 {
     std::cout << "Dog destructor called" << std::endl;
-    delete this->_brain;
+    if (this->_brain)
+        delete this->_brain;
 }
 
 void Dog::makeSound() const

@@ -40,7 +40,8 @@ Cat& Cat::operator=(const Cat& other)
     if (this != &other)
     {
         this->type = other.type;
-        delete this->_brain;
+        if (this->_brain)
+            delete this->_brain;
         this->_brain = new Brain(*(other._brain));
     }
     return *this;
@@ -49,7 +50,8 @@ Cat& Cat::operator=(const Cat& other)
 Cat::~Cat()
 {
     std::cout << "Cat destructor called" << std::endl;
-    delete this->_brain;
+    if (this->_brain)
+     delete this->_brain;
 }
 
 void Cat::makeSound() const
